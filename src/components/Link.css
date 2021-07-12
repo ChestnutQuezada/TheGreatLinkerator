@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
-
 div#Link {
     width: 750px;
     height: auto;
     margin: 10px;
     background-color: #ffffff7a;
     padding: 10px;
-    /* font-family: 'VT323', monospace; */
     font-size: 25px;
     border-radius: 15px;
     box-shadow: 2px 2px 3px #00000052;

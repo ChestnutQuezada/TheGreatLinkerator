@@ -1,13 +1,7 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap'); */
-
 /* **  Page Title  ** */
 .title > h1 {
-    /* font-family: 'Press Start 2P', cursive; */
     font-size: 56px;
     margin: 10px;
-    /* background: -webkit-linear-gradient(#13ff3c, #e6e83a); */
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
     text-shadow: 3px 2px 1px black;
 }
 
@@ -35,7 +29,6 @@ input.searchForm {
     border-radius: 15px;
     margin-right: 20px;
     padding-left: 10px;
-    /* font-family: 'VT323', monospace; */
     font-size: 20px;
     width: 600px;
     height: 25px;
