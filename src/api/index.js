@@ -1,62 +1,40 @@
-import axios from 'axios';
+import axios from "axios";
 
-export async function getSomething() {
+export async function addBookmarkAPI({ websiteUrl, tags, comments }) {
+  const data = {
+    linkname: websiteUrl,
+    tags,
+    comment: comments,
+  };
+
   try {
-    const { data } = await axios.get('/api');
-    return data;
+    console.log("trying to add bookmark", data);
+    const result = await axios.post("/api/links", data);
+    console.log("result", result);
+    if (result.data.success) {
+      return true;
+    }
+    console.log("failed to add bookmark", result.data.error);
+    return false;
   } catch (error) {
-    throw error;
+    console.log("failed to add bookmark", error);
   }
 }
 
 export async function getLinks() {
   try {
-    const { data } = await axios.get(`/api/links`);
-    return data;
+    const { data } = await axios.get("/api/links");
+    return data.links;
   } catch (error) {
     throw error;
   }
 }
 
-export async function  getLinkById(linkId) {
+export async function incrementClickCount(link) {
   try {
-    const { data } = await axios.get(`/api/links/${linkId}`);
-    return data;
+    const { data } = await axios.put(`/api/links/${link.id}/visit`);
+    return data.link;
   } catch (error) {
     throw error;
   }
-}
-
-export async function createLink({ link, comment, tags }) {
-  try {
-    const { data } = await axios.post("/api/links", {
-      link,
-      clickCount: 0,
-      comment,
-      date: new Date(),
-      tags
-    });
-    return data;
-  } catch (error) {
-    throw error;
-  }
-}
-
-export async function createTag(tagName) {
-  try {
-    const { data } = await axios.post("/api/tags", { name: tagName });
-    return data;
-  } catch (error) {
-    throw error;
-  }
-}
-
-export async function getTags() {
-  try {
-    const { data } = await axios.get("/api/tags");
-    return data;
-  } catch (error) {
-    throw error;
-  }
-  
 }

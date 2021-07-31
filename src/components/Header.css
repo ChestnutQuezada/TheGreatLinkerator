@@ -1,0 +1,12 @@
+.header {
+    grid-row: 1;
+    background: #FFC2E2;
+    grid-column: 1 / -1;
+    padding: 8px;
+    text-align: center;
+    font-family: helvetica;
+  }
+  
+  h1 {
+    color: red;
+  }
