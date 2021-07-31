@@ -2,11 +2,8 @@
 
 const { Client } = require("pg");
 require("dotenv").config();
-const { USER, KEY } = process.env;
 const DB_NAME = "linkerator";
-const DB_URL =
-  process.env.DATABASE_URL ||
-  `postgres://${USER}:${KEY}@localhost:5432/${DB_NAME}`;
+const DB_URL = process.env.DATABASE_URL || `postgres://localhost:5432/${DB_NAME}`;
 const client = new Client(DB_URL);
 
 // database methods
